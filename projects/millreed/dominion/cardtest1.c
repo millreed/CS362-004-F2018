@@ -32,9 +32,13 @@ struct gameState G;
 
 printf("************* START OF TEST FOR smithy Card *************\n\n");
 
-memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	
+	
 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 
+	for (i = 0; i < sizeof(struct gameState); i++) {
+		printf("%d\n", ((char*)&G)[i]);
+	}
 	
 printf("Testing smithy for %d players\n", numPlayer);
 for (p = 0; p < numPlayer; p++)
