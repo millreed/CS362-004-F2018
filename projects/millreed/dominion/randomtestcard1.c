@@ -94,9 +94,17 @@ int main() {
 				failures++;
 			}
 			// check the handcount after playing the card
-			else if (GPrime.deckCount[p] - 3 != G.deckCount[p]){
-				printf("Test#%d: Expected %d deckCount, found %d deckCount\n", n, GPrime.deckCount[p] - 3 , G.deckCount[p]);
-				failures++;
+			else if(GPrime.deckCount[p] > 3){
+				if (GPrime.deckCount[p] - 3 != G.deckCount[p]){
+					printf("Test#%d: Expected %d deckCount, found %d deckCount\n", n, GPrime.deckCount[p] - 3 , G.deckCount[p]);
+					failures++;
+				}
+			}
+			else {
+				if (GPrime.deckCount[p] + GPrime.discardCount[p] - 3 != G.deckCount[p]){
+					printf("Test#%d: Expected %d deckCount, found %d deckCount\n", n, GPrime.deckCount[p] + GPrime.discardCount[p] - 3 , G.deckCount[p]);
+					failures++;
+				}
 			}
 		}
 		
