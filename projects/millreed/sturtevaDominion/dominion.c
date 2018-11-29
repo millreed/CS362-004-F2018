@@ -718,7 +718,8 @@ void villageCard(int currentPlayer, int handPos, struct gameState *state){
 	drawCard(currentPlayer, state);
 	
 	//+2 Actions
-	state->numActions = state->numActions + 2;//Changed to +2 to reflect card effect of adding 2 actions
+	//Changed to +2 to reflect card effect of adding 2 actions
+	state->numActions = state->numActions + 2;
 	
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
